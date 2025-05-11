@@ -1,0 +1,68 @@
+.timerContainer {
+    display: flex;
+    gap: 15px;
+    font-weight: 700;
+    font-size: 2.8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 350px;
+    flex-wrap: nowrap;
+  }
+  
+  .timeSegment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .circleBorder {
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  
+  .digits {
+    position: relative;
+    z-index: 2;
+    font-size: 20px;
+    letter-spacing: 0.1rem;
+    color: #fff;
+    font-variant-numeric: tabular-nums;
+    user-select: none;
+    min-width: 3rem;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .label {
+    margin-top: 0.55rem;
+    font-size: 14px;
+    color: #fff;
+    user-select: none;
+    font-family: Arial, sans-serif;
+  }
+  
+  .progressRing {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-90deg);
+    width: 3rem;
+    height: 3rem;
+    z-index: 1;
+  }
+  
+  .progressRingCircle {
+    stroke: var(--beige);
+    stroke-width: 1;
+    fill: transparent;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.3s linear;
+  }
+  
