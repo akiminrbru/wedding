@@ -65,7 +65,7 @@ export default function Home() {
 							<li>
 								<span>17:00</span>
 								<span>
-									Выездная <br /> регистрация
+									Регистрация
 								</span>
 							</li>
 							<li>
