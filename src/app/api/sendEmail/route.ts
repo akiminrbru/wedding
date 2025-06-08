@@ -2,6 +2,7 @@ import nodemailer from 'nodemailer';
 
 type FormValues = {
 	fullName: string;
+	phone: string;
 	attendance: string;
 	drinks: string[];
 };
@@ -10,7 +11,7 @@ export async function POST(request: Request) {
 	try {
 		const data: FormValues = await request.json();
 
-		const { fullName, attendance, drinks } = data;
+		const { fullName, phone, attendance, drinks } = data;
 
 		// Basic validation
 		if (
@@ -45,6 +46,7 @@ export async function POST(request: Request) {
 Новая заявка:
 
 ФИО: ${fullName}
+Телефон: ${phone}
 Посещение: ${attendance}
 Напитки: ${drinks.join(', ')}
 

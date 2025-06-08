@@ -7,6 +7,7 @@ import styles from './Form.module.scss';
 
 type FormValues = {
 	fullName: string;
+	phone: string;
 	attendance: string;
 	drinks: string[];
 };
@@ -32,6 +33,8 @@ export const Form = () => {
 		fullName: Yup.string()
 			.required('Пожалуйста, укажите ваши ФИО')
 			.min(2, 'Слишком короткое имя'),
+		phone: Yup.string()
+			.required('Пожалуйста, укажите ваш телефон'),
 		attendance: Yup.string().required('Пожалуйста, выберите вариант посещения'),
 		drinks: Yup.array().min(1, 'Пожалуйста, выберите хотя бы один напиток'),
 	});
@@ -39,6 +42,7 @@ export const Form = () => {
 	const formik = useFormik<FormValues>({
 		initialValues: {
 			fullName: '',
+			phone: '',
 			attendance: '',
 			drinks: [],
 		},
@@ -103,6 +107,24 @@ export const Form = () => {
 					/>
 					{formik.touched.fullName && formik.errors.fullName ? (
 						<div className={styles.error}>{formik.errors.fullName}</div>
+					) : null}
+				</div>
+				<div className={styles.formGroup}>
+					<label htmlFor="phone" className={styles.label}>
+						Ваш телефон
+					</label>
+					<input
+						id="phone"
+						name="phone"
+						type="text"
+						className={styles.input}
+						onChange={formik.handleChange}
+						onBlur={formik.handleBlur}
+						value={formik.values.phone}
+						placeholder="Ваш телефон"
+					/>
+					{formik.touched.phone && formik.errors.phone ? (
+						<div className={styles.error}>{formik.errors.phone}</div>
 					) : null}
 				</div>
 
