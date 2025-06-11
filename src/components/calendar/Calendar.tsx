@@ -5,7 +5,7 @@ export const Calendar = () => {
 	const weekdays = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
 	const daysInSeptember = 30;
 
-	const emptySlots = 6;
+	const emptySlots = 0;
 
 	const calendarDays = [
 		...Array(emptySlots).fill(null),
